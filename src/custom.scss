@@ -1,0 +1,198 @@
+
+$jumbotron-img:(
+    url("/home.jpg")
+);
+
+$body-bg: #0C0D0F;
+
+.color-nav{
+    background-color: #050507;
+}
+
+.button-color{
+    background-color: #513649;
+    color: #513649;
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+.cardHolder{
+    min-width: 300px;
+}
+
+.cardColumn{
+    padding-bottom: 50px;
+}
+// .card-body{
+//     background-color:#050507;
+// }
+
+// .card-footer{
+//     background-color:#050507;
+//     color: #513649;
+// }
+
+// .text-muted{
+//     background-color:#050507;
+// }
+
+.fadeText{
+    animation: fadeTextIn 6s ease forwards;
+}
+
+
+@keyframes fadeTextIn{
+    from{
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    to{
+        opacity: 1;
+        pointer-events: all;
+    }
+
+}
+
+@keyframes fadeBlurOut{
+    from{
+        -webkit-filter: blur(20px); /* Chrome, Safari, Opera */
+        filter: blur(20px);
+    }
+
+    to{
+        -webkit-filter: blur(0px); /* Chrome, Safari, Opera */
+        filter: blur(0px);
+    }
+}
+
+.boxImgZoom{
+    overflow: hidden;
+}
+
+
+
+.bigBox{
+   height: 1300px;
+   max-width: 100%;
+   max-height: 100%;
+   transition: .5s all;
+   width: -webkit-fill-available;
+   animation: fadeBlurOut 2s ease forwards;
+}
+
+.smallBox{
+    height: 433.3px;
+    transition: .5s all;
+    width: -webkit-fill-available;
+    animation: fadeBlurOut 3s ease forwards;
+}
+
+.boxImgZoom:hover div{
+    transform: scale(1.1);
+
+}
+
+.boxImgZoom:focus div{
+    transform: scale(1.1);
+}
+
+.personalImageBig{
+  @extend .bigBox;
+  background-image: url("/home.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.personalImageSmall{
+    @extend .smallBox;
+    background-image: url("/home.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.universityImage{
+    @extend .smallBox;
+    background-image: url("/university.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gamedevImage{
+    @extend .smallBox;
+    background-image: url("/gamedev.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.programmingImage{
+    @extend .smallBox;
+    background-image: url("/programming.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+//New home page
+
+.HomeHeader{
+    background-image: url("/home.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+}
+
+.AboutHeader{
+    background-color: $body-bg;
+    height: 300px;
+    width: -webkit-fill-available;
+    animation: fadeBlurOut 2s ease forwards;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.homeContainerDiv{
+    animation: fadeBlurOut 2s ease forwards;
+}
+
+@media only screen and (max-width: 600px) {
+    .homeContainerDiv{
+        padding-top: 80px;
+        padding-bottom: 200px;
+        text-align : center;
+    }
+
+    .discoverMeP{
+        padding-bottom: 0px;
+    }
+
+    .cardContainer{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+
+}
+
+@media only screen and (min-width: 600px) {
+    .homeContainerDiv{
+        padding-top: 200px;
+        padding-bottom: 200px;
+        text-align : center;
+    }
+
+    .discoverMeP{
+        padding-bottom: 100px;
+    }
+
+    .cardContainer{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+}
+
+@import "~bootstrap/scss/bootstrap";
